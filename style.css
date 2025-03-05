@@ -1,0 +1,60 @@
+body {
+    background: linear-gradient(to bottom, #1a2b5f, #243775);
+    color: white;
+}
+
+.navbar, footer, .bg-custom-dark {
+    background: linear-gradient(to right, #111e45, #243775) !important;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.bg-custom-primary {
+    background: linear-gradient(to right, #1a2b5f, #3a4d8c);
+}
+
+.bg-custom-medium, .card {
+    background: linear-gradient(to right, #243775, #263979);
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn-primary, .btn-dark {
+    background: #3a4d8c;
+    border: none;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover, .btn-dark:hover {
+    background: #4a6bdb;
+}
+
+.btn-outline-primary {
+    color: white;
+    border: 2px solid #3a4d8c;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: #3a4d8c;
+    color: white;
+}
+
+.nav-link, a.text-light {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, a.text-light:hover {
+    color: #4a6bdb !important;
+    text-decoration: none;
+}
+
+.destacar {
+    
+    background: linear-gradient(to right, #1e2e61, #1b2443);
+    border-radius: 16px;
+    padding: 5rem;
+}
