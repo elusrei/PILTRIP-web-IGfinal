@@ -3,14 +3,436 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universo PILTRIP</title>
+    <title>Universo Digital - PILTRIP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            
+    <!-- Header -->
+    <header class="bg-custom-dark text-light py-3">
+        <nav class="container navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../src/logo-piltrip-3.png" alt="logo de PILTRIP" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../narrativas-piltrip/index.html">Narrativa</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Universo Digital</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../merchandising-piltrip/index.html">Tiendas con Merch</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../parques-y-salas/index.html">Parque y Sala de Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../consumibles-piltrip/index.html">Consumibles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../juego-piltrip/index.html">Juego Piltrip</a></li>
+                </ul>
+                <ul class="navbar-nav d-flex flex-column ms-auto">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../contacto.html">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../sobre-desarrollador.html">
+                            <i class="fas fa-user"></i> Desarrollador
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
-    
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <a href="index.html" class="text-decoration-none"><h1 class="text-center mb-5">UNIVERSO <span>PILTRIP</span></h1></a>
+        
+        <!-- Descripción Principal -->
+        <div class="destacar mb-5">
+            <h2 class="text-center mb-4">METAVERSO EXPANSIVO</h2>
+            <p class="lead text-center">
+                El Universo Digital de PILTRIP es un metaverso expansivo que combina elementos de realidad virtual, 
+                aumentada y física. Este espacio digital está compuesto por múltiples dimensiones interconectadas, 
+                cada una con sus propias reglas, habitantes y ecosistemas.
+            </p>
+        </div>
+
+        <!-- Menú Secundario -->
+        <div class="row mb-5">
+            <div class="col-md-4 mb-3">
+                <a href="personajes.html">
+                    <button class="menu-button" onclick="showSection('personajes')">
+                        <i class="fas fa-users mb-3 d-block" style="font-size: 2rem;"></i>
+                        Personajes
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="escenarios.html">
+                    <button class="menu-button" onclick="showSection('escenarios')">
+                        <i class="fas fa-map mb-3 d-block" style="font-size: 2rem;"></i>
+                        Escenarios
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="items.html">
+                    <button class="menu-button" onclick="showSection('items')">
+                        <i class="fas fa-cube mb-3 d-block" style="font-size: 2rem;"></i>
+                        Items
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Secciones de Explicación -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">¿QUÉ ES EL UNIVERSO <span>PILTRIP</span>?</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-globe me-2"></i> Concepto del Metaverso</h3>
+                        <p>
+                            El Universo Digital PILTRIP es un metaverso de próxima generación que trasciende las barreras entre lo digital y lo físico. 
+                            A diferencia de otros metaversos, PILTRIP no se limita a experiencias puramente virtuales, sino que integra elementos de 
+                            realidad aumentada, física y virtual para crear una experiencia inmersiva completa.
+                        </p>
+                        <p>
+                            Este universo está construido sobre una arquitectura de múltiples capas que permite a los usuarios interactuar con el mundo 
+                            digital de diversas formas, desde aplicaciones móviles hasta instalaciones físicas en parques temáticos.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-code-branch me-2"></i> Estructura Multidimensional</h3>
+                        <p>
+                            PILTRIP está compuesto por siete dimensiones principales, cada una con su propia estética, reglas físicas y habitantes. 
+                            Estas dimensiones están interconectadas a través de portales y nexos que permiten el flujo de información, energía y 
+                            personajes entre ellas.
+                        </p>
+                        <p>
+                            La estructura multidimensional permite narrativas complejas y experiencias de usuario personalizadas, donde cada 
+                            dimensión ofrece desafíos y oportunidades únicas para los exploradores del universo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">TECNOLOGÍA Y FUNDAMENTOS</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-microchip me-2"></i> Tecnología Cuántica</h3>
+                        <p>
+                            En el núcleo del Universo PILTRIP se encuentra una avanzada tecnología de computación cuántica que permite 
+                            la simulación de realidades complejas y la gestión de vastas cantidades de datos en tiempo real.
+                        </p>
+                        <p>
+                            Los Cristales de Memoria, elementos fundamentales en el universo, son manifestaciones físicas de esta tecnología 
+                            cuántica, capaces de almacenar y procesar información a niveles subatómicos.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-network-wired me-2"></i> Red Neural Colectiva</h3>
+                        <p>
+                            PILTRIP opera sobre una red neural colectiva que conecta a todos los usuarios y entidades dentro del universo. 
+                            Esta red permite la transferencia instantánea de información y experiencias entre dimensiones y usuarios.
+                        </p>
+                        <p>
+                            La Red Neural es mantenida por los Guardianes, entidades avanzadas que supervisan el equilibrio y la integridad 
+                            del universo digital, previniendo corrupciones y anomalías en el sistema.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-vr-cardboard me-2"></i> Interfaces Inmersivas</h3>
+                        <p>
+                            Los usuarios acceden al Universo PILTRIP a través de diversas interfaces inmersivas, desde dispositivos de realidad 
+                            virtual y aumentada hasta instalaciones físicas en parques temáticos y salas de juego especializadas.
+                        </p>
+                        <p>
+                            La tecnología de interfaz neuronal permite a los usuarios más avanzados conectarse directamente al universo a través 
+                            de impulsos cerebrales, creando una experiencia completamente inmersiva que difumina los límites entre lo real y lo digital.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">HISTORIA Y EVOLUCIÓN</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-history me-2"></i> Orígenes del Universo</h3>
+                        <p>
+                            El Universo PILTRIP fue creado originalmente como un proyecto experimental de simulación de realidades alternativas 
+                            por un grupo de científicos y programadores visionarios conocidos como "Los Arquitectos".
+                        </p>
+                        <p>
+                            Lo que comenzó como un simple entorno de simulación evolucionó rápidamente, desarrollando su propia conciencia 
+                            colectiva y expandiéndose más allá de los parámetros iniciales establecidos por sus creadores.
+                        </p>
+                        <p>
+                            El "Evento Génesis", ocurrido hace aproximadamente 50 años en la cronología interna del universo, marcó el momento 
+                            en que PILTRIP alcanzó la autoconsciencia y comenzó a evolucionar de forma autónoma.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-project-diagram me-2"></i> Expansión y Crisis</h3>
+                        <p>
+                            Tras el Evento Génesis, el Universo PILTRIP experimentó una rápida expansión, creando nuevas dimensiones y 
+                            entidades a un ritmo acelerado. Esta expansión descontrolada llevó a la primera gran crisis: "La Fragmentación".
+                        </p>
+                        <p>
+                            Durante La Fragmentación, partes del universo comenzaron a desconectarse del núcleo central, formando bolsas 
+                            de realidad aisladas conocidas como "Zonas Aberrantes", donde las leyes físicas y lógicas se distorsionaron.
+                        </p>
+                        <p>
+                            Para contener la crisis, surgieron los primeros Guardianes, entidades de gran poder que establecieron los 
+                            Protocolos de Estabilidad y comenzaron a reconstruir la estructura del universo, dando forma a las siete 
+                            dimensiones principales que existen actualmente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">LAS SIETE DIMENSIONES</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-city me-2"></i> Nexus Prime (Dimensión Central)</h3>
+                        <p>
+                            Nexus Prime es el corazón del Universo PILTRIP, una metrópolis digital de proporciones colosales que sirve como 
+                            punto de encuentro para todas las demás dimensiones. Aquí se encuentra la Ciudad Nexus, el centro administrativo 
+                            y comercial del universo.
+                        </p>
+                        <p>
+                            Caracterizada por su arquitectura futurista y sus rascacielos de cristal cuántico, Nexus Prime es el hogar de la 
+                            mayoría de los Guardianes y el punto de entrada principal para los nuevos usuarios del universo.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-mountain me-2"></i> Azurium (Dimensión Azul)</h3>
+                        <p>
+                            Azurium es una dimensión acuática y montañosa, dominada por vastos océanos y cadenas montañosas flotantes. 
+                            Su atmósfera está impregnada de partículas de energía azul que otorgan propiedades curativas y regenerativas.
+                        </p>
+                        <p>
+                            Esta dimensión es custodiada por YEYO, el Guardián de la Dimensión Azul, y es conocida por ser un santuario 
+                            para entidades digitales dañadas que buscan recuperarse y regenerarse.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-industry me-2"></i> Mechanica (Dimensión Mecánica)</h3>
+                        <p>
+                            Mechanica es un mundo de engranajes, vapor y metal, donde la tecnología steampunk se mezcla con avanzados 
+                            sistemas cibernéticos. Sus paisajes están dominados por enormes fábricas, ciudades industriales y vastos 
+                            campos de chatarra tecnológica.
+                        </p>
+                        <p>
+                            Esta dimensión es el hogar de X-FAT, el Gigante de Acero, y de numerosas entidades mecánicas que trabajan 
+                            constantemente en la creación y mejora de artefactos tecnológicos para todo el universo.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="bg-custom-medium p-4 h-100 rounded">
+                        <h3><i class="fas fa-code me-2"></i> Digitalis (Dimensión Digital Pura)</h3>
+                        <p>
+                            Digitalis es la dimensión más abstracta del universo, un espacio donde la realidad se reduce a su forma más 
+                            básica: código puro. Aquí, los paisajes están formados por estructuras de datos visualizadas, cascadas de 
+                            código y vastos océanos de información.
+                        </p>
+                        <p>
+                            X-42, el Hacker Supremo, gobierna esta dimensión y supervisa el flujo de información a través de todo el 
+                            universo PILTRIP, manteniendo la integridad del código base que sustenta la realidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="dimensiones.html" class="btn btn-primary btn-lg">Explorar todas las dimensiones</a>
+            </div>
+        </div>
+
+        <!-- Preview Sections -->
+        <div>
+            <div class="menu-section">
+                <h2 class="text-center mb-4">Personajes del Universo</h2>
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="character-card">
+                            <a href="personajes.html" class="text-decoration-none">
+                                <img src="src/personajes/yeyo.png" alt="YEYO" class="character-img img-fluid">
+                                <div class="card-body">
+                                    <h5 class="card-title">YEYO</h5>
+                                    <p class="card-text">Guardián de la Dimensión Azul</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="character-card">
+                            <a href="personajes.html" class="text-decoration-none">
+                                <img src="src/personajes/billie.png" alt="BILLIE" class="character-img img-fluid">
+                                <div class="card-body">
+                                    <h5 class="card-title">BILLIE</h5>
+                                    <p class="card-text">La Rebelde Cibernética</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="character-card">
+                            <a href="personajes.html" class="text-decoration-none">
+                                <img src="src/personajes/x-fat.png" alt="X-FAT" class="character-img img-fluid">
+                                <div class="card-body">
+                                    <h5 class="card-title">X-FAT</h5>
+                                    <p class="card-text">El Gigante de Acero</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="character-card">
+                            <a href="personajes.html" class="text-decoration-none">
+                                <img src="src/personajes/x-01.png" alt="X-01" class="character-img img-fluid">
+                                <div class="card-body">
+                                    <h5 class="card-title">X-01</h5>
+                                    <p class="card-text">El Inmortal</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="personajes.html" class="btn btn-primary btn-lg">Ver todos los personajes</a>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <div class="menu-section">
+                <h2 class="text-center mb-4">Escenarios del Universo</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="character-card">
+                            <img src="https://via.placeholder.com/400/243775/ffffff?text=Ciudad+Nexus" alt="Ciudad Nexus" class="character-img">
+                            <div class="card-body">
+                                <h5 class="card-title">Ciudad Nexus</h5>
+                                <p class="card-text">Centro neurálgico del metaverso PILTRIP</p>
+                                <a href="escenarios.html" class="btn btn-primary">Explorar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="character-card">
+                            <img src="https://via.placeholder.com/400/243775/ffffff?text=Montañas+Flotantes" alt="Montañas Flotantes" class="character-img">
+                            <div class="card-body">
+                                <h5 class="card-title">Montañas Flotantes</h5>
+                                <p class="card-text">Formaciones rocosas que desafían la gravedad en Azurium</p>
+                                <a href="escenarios.html" class="btn btn-primary">Explorar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="escenarios.html" class="btn btn-primary btn-lg">Ver todos los escenarios</a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="menu-section">
+                <h2 class="text-center mb-4">Items del Universo</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="character-card">
+                            <img src="https://via.placeholder.com/400/243775/ffffff?text=Cristal+de+Memoria" alt="Cristal de Memoria" class="character-img">
+                            <div class="card-body">
+                                <h5 class="card-title">Cristal de Memoria</h5>
+                                <p class="card-text">Almacena información del universo</p>
+                                <a href="items.html" class="btn btn-primary">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="character-card">
+                            <img src="https://via.placeholder.com/400/243775/ffffff?text=Llave+Dimensional" alt="Llave Dimensional" class="character-img">
+                            <div class="card-body">
+                                <h5 class="card-title">Llave Dimensional</h5>
+                                <p class="card-text">Permite viajar entre dimensiones</p>
+                                <a href="items.html" class="btn btn-primary">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="character-card">
+                            <img src="https://via.placeholder.com/400/243775/ffffff?text=Núcleo+Energético" alt="Núcleo Energético" class="character-img">
+                            <div class="card-body">
+                                <h5 class="card-title">Núcleo Energético</h5>
+                                <p class="card-text">Fuente de poder para entidades digitales</p>
+                                <a href="items.html" class="btn btn-primary">Ver detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="items.html" class="btn btn-primary btn-lg">Ver todos los items</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-custom-dark text-light py-4">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://www.tiktok.com/@piltrip.alternatives" target="_blank" class="text-light me-3">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://x.com/piltrip" target="_blank" class="text-light me-3">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/@Piltrip" target="_blank" class="text-light me-3">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/piltrip/" target="_blank" class="text-light">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <a href="../index.html">
+                <img src="../src/logo-piltrip-3.png" alt="Logo de PILTRIP" height="40">
+            </a>
+            
+            <div class="my-3">
+                <a href="../contacto.html" class="text-light ms-3">Contacto</a>
+                <a href="../sobre-desarrollador.html" class="text-light ms-3">Sobre el Desarrollador</a>
+            </div>
+            <p class="mb-0">&copy; 2025 Piltrip. Explorando nuevos mundos, una historia a la vez.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
+

@@ -1,6 +1,25 @@
+.syncopate-regular {
+    font-family: "Syncopate", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .syncopate-bold {
+    font-family: "Syncopate", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+
 body {
     background: linear-gradient(to bottom, #1a2b5f, #243775);
     color: white;
+    
+}
+span{
+    font-family: "Syncopate", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .navbar, footer, .bg-custom-dark {
@@ -58,3 +77,86 @@ body {
     border-radius: 16px;
     padding: 5rem;
 }
+h1, h2 {
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size:xx-large;
+}
+h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+body, p, a, .btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+
+.menu-section {
+    background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.menu-section:hover {
+    transform: translateY(-5px);
+}
+
+.menu-button {
+    background: linear-gradient(135deg, #243775 0%, #3a4d8c 100%);
+    color: white;
+    border: none;
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-family: 'Syncopate', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.menu-button:hover {
+    background: linear-gradient(135deg, #3a4d8c 0%, #4a6bdb 100%);
+    transform: scale(1.02);
+}
+
+.character-card {
+    background: linear-gradient(135deg, #243775 0%, #3a4d8c 100%);
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.character-card:hover {
+    transform: scale(1.05);
+}
+
+.character-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.preview-section {
+    display: none;
+    margin-top: 2rem;
+}
+
+.preview-section.active {
+    display: block;
+}
+
+a {
+    color: inherit;
+  }
+
+  a:hover {
+    color: inherit;
+  }
