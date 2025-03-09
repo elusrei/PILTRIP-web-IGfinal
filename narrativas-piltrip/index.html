@@ -3,14 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narrativa del Universo PILTRIP</title>
+    <title>Narrativas - PILTRIP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header>
-        <nav>
-            
+    <!-- Header -->
+    <header class="bg-custom-dark text-light py-3">
+        <nav class="container navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../src/logo-piltrip-3.png" alt="logo de PILTRIP" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Narrativa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../universo-piltrip/index.html">Universo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../merchandising-piltrip/index.html">Tiendas con Merch</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../parques-y-salas/index.html">Parque y Sala de Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../consumibles-piltrip/index.html">Consumibles</a></li>
+                    <li class="nav-item">
+                        <a class="btn nav-link text-white border rounded px-4 py-2 bg-custom-dark btn-primary:hover btn-dark:hover shadow-lg" href="../juego-piltrip/index.html">
+                            Juego Piltrip
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-flex flex-column ms-auto">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../contacto.html">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../sobre-desarrollador.html">
+                            <i class="fas fa-user"></i> Desarrollador
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
-    
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <h1 class="text-center mb-5">NARRATIVAS <span>PILTRIP</span></h1>
+        
+        <!-- Descripción -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center fst-italic">El Origen del Universo</h2>
+            <p class="lead text-center">
+                Explora el origen del universo PILTRIP, su trama principal y las posibles tramas paralelas que se desarrollan
+                en este fascinante metaverso digital. Descubre historias que se entrelazan a través de diferentes medios
+                y formatos, creando una experiencia narrativa única y envolvente.
+            </p>
+        </div>
+
+        <!-- Menú Secundario de Narrativas -->
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <a href="comics-y-animados.html">
+                    <button class="menu-button">
+                        <i class="fas fa-book-open mb-3 d-block" style="font-size: 2rem;"></i>
+                        Comics y Animados
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="microserie.html">
+                    <button class="menu-button">
+                        <i class="fas fa-film mb-3 d-block" style="font-size: 2rem;"></i>
+                        Microserie
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="videojuegos.html">
+                    <button class="menu-button">
+                        <i class="fas fa-gamepad mb-3 d-block" style="font-size: 2rem;"></i>
+                        Videojuegos
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Banners de Tramas -->
+        <div class="row mb-5">
+            <div class="col-12 mb-4">
+                <div class="menu-section position-relative overflow-hidden" style="height: 300px;">
+                    <img src="../src/narrativas/banner-trama-principal.jpg" alt="Trama Principal" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" style="object-position: center;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-start p-5" style="background: linear-gradient(90deg, rgba(26,43,95,0.9) 0%, rgba(26,43,95,0.7) 50%, rgba(26,43,95,0.4) 100%);">
+                        <h3 class="display-4 fw-bold">LA CAÍDA DEL NEXO</h3>
+                        <p class="lead mb-4">La trama principal que narra cómo el colapso del Nexo Central desencadenó una crisis en todo el metaverso.</p>
+                        <a href="comics-y-animados.html" class="btn btn-primary btn-lg">Leer Comic</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="menu-section position-relative overflow-hidden" style="height: 250px;">
+                    <img src="../src/narrativas/banner-trama-secundaria-1.jpg" alt="Trama Secundaria 1" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" style="object-position: center;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-start p-4" style="background: linear-gradient(90deg, rgba(26,43,95,0.9) 0%, rgba(26,43,95,0.7) 50%, rgba(26,43,95,0.4) 100%);">
+                        <h3 class="fw-bold">LOS REBELDES DIGITALES</h3>
+                        <p class="mb-3">Un grupo de hackers lucha contra la corporación que controla el metaverso.</p>
+                        <a href="microserie.html" class="btn btn-primary">Ver Microserie</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="menu-section position-relative overflow-hidden" style="height: 250px;">
+                    <img src="../src/narrativas/banner-trama-secundaria-2.jpg" alt="Trama Secundaria 2" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" style="object-position: center;">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-start p-4" style="background: linear-gradient(90deg, rgba(26,43,95,0.9) 0%, rgba(26,43,95,0.7) 50%, rgba(26,43,95,0.4) 100%);">
+                        <h3 class="fw-bold">LA BÚSQUEDA DEL CRISTAL AZUL</h3>
+                        <p class="mb-3">La aventura para encontrar el artefacto más poderoso del universo PILTRIP.</p>
+                        <a href="videojuegos.html" class="btn btn-primary">Jugar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enlaces a Personajes e Items -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">Explora el Universo</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <a href="../universo-piltrip/personajes.html" class="text-decoration-none">
+                            <div class="character-card mb-3" style="width: 100%; max-width: 400px;">
+                                <img src="../universo-piltrip/src/personajes/yeyo.png" alt="Personajes" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                                <div class="card-body text-center p-3">
+                                    <h4>PERSONAJES</h4>
+                                    <p>Conoce a los protagonistas y antagonistas de las historias de PILTRIP</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <a href="../universo-piltrip/items.html" class="text-decoration-none">
+                            <div class="character-card mb-3" style="width: 100%; max-width: 400px;">
+                                <img src="../universo-piltrip/src/items/cristal-azul.png" alt="Items" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                                <div class="card-body text-center p-3">
+                                    <h4>ITEMS</h4>
+                                    <p>Descubre los objetos y artefactos que dan poder a los personajes</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-custom-dark text-light py-4">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://www.tiktok.com/@piltrip.alternatives" target="_blank" class="text-light me-3">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://x.com/piltrip" target="_blank" class="text-light me-3">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/@Piltrip" target="_blank" class="text-light me-3">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/piltrip/" target="_blank" class="text-light">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <a href="../index.html">
+                <img src="../src/logo-piltrip-3.png" alt="Logo de PILTRIP" height="40">
+            </a>
+            
+            <div class="my-3">
+                <a href="../contacto.html" class="text-light ms-3">Contacto</a>
+                <a href="../sobre-desarrollador.html" class="text-light ms-3">Sobre el Desarrollador</a>
+            </div>
+            <p class="mb-0">&copy; 2025 Piltrip. Explorando nuevos mundos, una historia a la vez.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

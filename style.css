@@ -26,6 +26,7 @@ span{
     background: linear-gradient(to right, #111e45, #243775) !important;
     border-radius: 8px;
     padding: 1rem;
+    
 }
 
 .bg-custom-primary {
@@ -44,6 +45,7 @@ span{
     border: none;
     color: white;
     transition: background 0.3s ease;
+    
 }
 
 .btn-primary:hover, .btn-dark:hover {
@@ -64,11 +66,60 @@ span{
 .nav-link, a.text-light {
     color: white !important;
     transition: color 0.3s ease;
+    
 }
 
 .nav-link:hover, a.text-light:hover {
-    color: #4a6bdb !important;
+    
     text-decoration: none;
+}
+.navbar-nav .nav-item {
+    position: relative;
+}
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 1.5rem rgba(85, 147, 255, 0.8), 
+                     0 0 3rem rgba(85, 147, 255, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 1.5rem rgba(85, 147, 255, 0.8), 
+                     0 0 3rem rgba(85, 147, 255, 0.6),
+                     0 0 3rem rgba(136, 180, 255, 0.705), 
+                     0 0 2rem rgb(139, 181, 255);
+    }
+    100% {
+        text-shadow: 0 0 3rem rgba(136, 180, 255, 0.705), 
+                     0 0 2rem rgb(139, 181, 255),
+                     0 0 3rem rgba(136, 180, 255, 0.705), 
+                     0 0 2rem rgb(139, 181, 255);
+    }
+}
+
+.active {
+    animation: glow 1s infinite alternate ease-in-out;
+
+}
+
+
+.navbar-nav .nav-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: .3rex;
+    background-color: white;
+    box-shadow: 0 0 3rem rgb(0, 0, 0), 
+            0 0 2rem rgb(0, 0, 0), 
+            0 0 1rem rgb(0, 0, 0), 
+            0 0 2rem rgba(0, 0, 0, 0.856);
+
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .destacar {
@@ -76,6 +127,10 @@ span{
     background: linear-gradient(to right, #1e2e61, #1b2443);
     border-radius: 16px;
     padding: 5rem;
+}
+body, p, a, .btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 }
 h1, h2 {
     font-family: 'Syncopate', sans-serif;
@@ -88,10 +143,7 @@ h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
-body, p, a, .btn {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-}
+
 
 
 .menu-section {

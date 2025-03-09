@@ -3,14 +3,604 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parques y Salas PILTRIP</title>
+    <title>Parques y Salas de Juegos - PILTRIP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header>
-        <nav>
-            
+    <!-- Header -->
+    <header class="bg-custom-dark text-light py-3">
+        <nav class="container navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../src/logo-piltrip-3.png" alt="logo de PILTRIP" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../narrativas-piltrip/index.html">Narrativa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../universo-piltrip/index.html">Universo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../merchandising-piltrip/index.html">Tiendas con Merch</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Parque y Sala de Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../consumibles-piltrip/index.html">Consumibles</a></li>
+                    <li class="nav-item">
+                        <a class="btn nav-link text-white border rounded px-4 py-2 bg-custom-dark btn-primary:hover btn-dark:hover shadow-lg" href="../juego-piltrip/index.html">
+                            Juego Piltrip
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-flex flex-column ms-auto">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../contacto.html">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../sobre-desarrollador.html">
+                            <i class="fas fa-user"></i> Desarrollador
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
-    
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <h1 class="text-center mb-5">PARQUES Y <span>SALAS DE JUEGOS</span></h1>
+        
+        <!-- Descripción -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center fst-italic">Experiencias Inmersivas PILTRIP</h2>
+            <p class="lead text-center">
+                PILTRIP está desarrollando una revolucionaria red de parques temáticos y salas de juegos que 
+                llevarán el metaverso al mundo físico. Estas experiencias inmersivas permitirán a los visitantes 
+                vivir aventuras únicas inspiradas en el universo PILTRIP, difuminando los límites entre lo digital y lo real.
+            </p>
+        </div>
+
+        <!-- Video Conceptual -->
+        <div class="menu-section mb-5">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-lg">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Concepto PILTRIP Parques y Salas" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center mt-3 fst-italic">Video conceptual: La visión de PILTRIP para experiencias físicas inmersivas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visión General -->
+        <div class="menu-section mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">Nuestra Visión: Metaverso Tangible</h2>
+                    <p class="lead">
+                        En PILTRIP creemos que el futuro del entretenimiento está en la fusión perfecta entre 
+                        experiencias digitales y físicas, creando lo que llamamos "Metaverso Tangible".
+                    </p>
+                    <p>
+                        Nuestros parques temáticos y salas de juegos están diseñados como extensiones físicas del 
+                        universo digital PILTRIP, donde los visitantes pueden interactuar con personajes, escenarios 
+                        y elementos narrativos que antes solo existían en pantallas.
+                    </p>
+                    <p>
+                        Cada atracción, juego y experiencia está conectada con el metaverso digital a través de 
+                        tecnología avanzada, permitiendo que las acciones en el mundo físico tengan repercusiones 
+                        en el digital y viceversa, creando un ecosistema de entretenimiento verdaderamente integrado.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="../src/parques/vision-general.jpg" alt="Visión General" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+
+        <!-- Parque Temático -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-5">PILTRIP DIMENSION PARK</h2>
+            
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="position-relative rounded-3 overflow-hidden" style="height: 500px;">
+                        <img src="../src/parques/parque-tematico.jpg" alt="Parque Temático PILTRIP" class="w-100 h-100 object-fit-cover">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center p-5" style="background: linear-gradient(90deg, rgba(26,43,95,0.9) 0%, rgba(26,43,95,0.7) 50%, rgba(26,43,95,0.4) 100%);">
+                            <div class="col-md-6">
+                                <h3 class="display-4 fw-bold text-white">UN MUNDO DE DIMENSIONES</h3>
+                                <p class="lead text-white mb-4">
+                                    El primer parque temático que fusiona realidad aumentada, tecnología háptica y escenarios físicos 
+                                    para crear una experiencia inmersiva sin precedentes.
+                                </p>
+                                <div class="d-flex gap-3">
+                                    <span class="badge bg-primary p-2">APERTURA 2026</span>
+                                    <span class="badge bg-danger p-2">PROYECTO EN DESARROLLO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Áreas del Parque -->
+            <h3 class="text-center mb-4">Áreas Temáticas</h3>
+            <div class="row mb-5">
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <img src="../src/parques/area-nexo.jpg" alt="Área Nexo Central" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <h4 class="card-title">NEXO CENTRAL</h4>
+                            <p class="card-text">
+                                El corazón del parque, inspirado en el centro neurálgico del metaverso PILTRIP. Esta área cuenta con 
+                                una impresionante estructura central que proyecta hologramas y efectos visuales sincronizados con la 
+                                narrativa del universo.
+                            </p>
+                            <p>
+                                <strong>Atracciones destacadas:</strong> Torre del Cristal Azul, Simulador de Viaje Dimensional, 
+                                Espectáculo "Convergencia de Realidades"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <img src="../src/parques/area-resistencia.jpg" alt="Área Resistencia" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <h4 class="card-title">DISTRITO RESISTENCIA</h4>
+                            <p class="card-text">
+                                Zona inspirada en los territorios controlados por la resistencia liderada por BILLIE. Un laberinto 
+                                urbano con estética cyberpunk donde los visitantes pueden participar en misiones interactivas contra 
+                                el sistema opresor.
+                            </p>
+                            <p>
+                                <strong>Atracciones destacadas:</strong> Montaña Rusa "Escape del Sector 7", Experiencia Interactiva 
+                                "Hackeo al Sistema", Arena de Combate Virtual
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <img src="../src/parques/area-orbital.jpg" alt="Área Orbital" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <h4 class="card-title">SECTOR ORBITAL</h4>
+                            <p class="card-text">
+                                Recreación del espacio orbital del metaverso PILTRIP con gravedad reducida y efectos visuales 
+                                espectaculares. Los visitantes pueden experimentar la sensación de flotar entre satélites y 
+                                estaciones espaciales digitales.
+                            </p>
+                            <p>
+                                <strong>Atracciones destacadas:</strong> Simulador de Vuelo "Orbital Defender", Experiencia de 
+                                Gravedad Cero, Observatorio Dimensional
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tecnologías del Parque -->
+            <h3 class="text-center mb-4">Tecnologías Innovadoras</h3>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="character-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center h-100 p-3" style="background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%);">
+                                    <i class="fas fa-vr-cardboard text-white" style="font-size: 4rem;"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                    <h4 class="card-title">REALIDAD MIXTA AVANZADA</h4>
+                                    <p class="card-text">
+                                        Sistema que combina elementos físicos con capas de realidad aumentada y virtual, permitiendo 
+                                        que los visitantes vean y interactúen con elementos digitales superpuestos al mundo real sin 
+                                        necesidad de dispositivos voluminosos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="character-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center h-100 p-3" style="background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%);">
+                                    <i class="fas fa-wind text-white" style="font-size: 4rem;"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                    <h4 class="card-title">ENTORNO SENSORIAL COMPLETO</h4>
+                                    <p class="card-text">
+                                        Tecnología que crea ambientes inmersivos mediante la combinación de efectos visuales, 
+                                        auditivos, táctiles, olfativos e incluso gustativos, permitiendo a los visitantes sentir 
+                                        el metaverso con todos sus sentidos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="character-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center h-100 p-3" style="background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%);">
+                                    <i class="fas fa-network-wired text-white" style="font-size: 4rem;"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                    <h4 class="card-title">SISTEMA DE PROGRESIÓN CRUZADA</h4>
+                                    <p class="card-text">
+                                        Plataforma que conecta las experiencias del parque con el metaverso digital, permitiendo 
+                                        que los logros y acciones en el parque se reflejen en el juego online y viceversa, creando 
+                                        una narrativa continua entre ambos mundos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="character-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center h-100 p-3" style="background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%);">
+                                    <i class="fas fa-robot text-white" style="font-size: 4rem;"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                    <h4 class="card-title">PERSONAJES INTERACTIVOS AUTÓNOMOS</h4>
+                                    <p class="card-text">
+                                        Robots avanzados con IA que representan a los personajes del universo PILTRIP, capaces de 
+                                        interactuar de forma natural con los visitantes, reconocer emociones y adaptar su comportamiento 
+                                        según el contexto y la narrativa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salas de Juegos -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-5">PILTRIP ARCADE NEXUS</h2>
+            
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="position-relative rounded-3 overflow-hidden" style="height: 500px;">
+                        <img src="../src/parques/sala-juegos.jpg" alt="Sala de Juegos PILTRIP" class="w-100 h-100 object-fit-cover">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center p-5" style="background: linear-gradient(90deg, rgba(26,43,95,0.4) 0%, rgba(26,43,95,0.7) 50%, rgba(26,43,95,0.9) 100%);">
+                            <div class="col-md-6 ms-auto">
+                                <h3 class="display-4 fw-bold text-white">LA NUEVA ERA DEL ARCADE</h3>
+                                <p class="lead text-white mb-4">
+                                    Centros de entretenimiento urbanos que combinan juegos arcade tradicionales con tecnología 
+                                    de vanguardia para crear experiencias sociales inmersivas.
+                                </p>
+                                <div class="d-flex gap-3">
+                                    <span class="badge bg-success p-2">PRIMERAS UBICACIONES 2025</span>
+                                    <span class="badge bg-warning p-2">FASE DE PRUEBAS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tipos de Experiencias -->
+            <h3 class="text-center mb-4">Experiencias de Juego</h3>
+            <div class="row mb-5">
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <img src="../src/parques/arcade-clasico.jpg" alt="Arcade Clásico Reinventado" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <h4 class="card-title">ARCADE CLÁSICO REINVENTADO</h4>
+                            <p class="card-text">
+                                Máquinas arcade con estética retro pero tecnología de vanguardia, que combinan mecánicas de juego 
+                                clásicas con elementos de realidad aumentada y conexión al metaverso PILTRIP.
+                            </p>
+                            <p>
+                                <strong>Juegos destacados:</strong> Neo Circuit Racing, Orbital Defender Arcade, Pixel Resistance
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <img src="../src/parques/experiencias-inmersivas.jpg" alt="Experiencias Inmersivas" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <h4 class="card-title">CÁPSULAS INMERSIVAS</h4>
+                            <p class="card-text">
+                                Cabinas individuales o para pequeños grupos equipadas con tecnología de realidad virtual, asientos 
+                                hápticos y efectos ambientales que transportan a los jugadores a diferentes zonas del metaverso PILTRIP.
+                            </p>
+                            <p>
+                                <strong>Experiencias destacadas:</strong> Misión Cristal Azul, Infiltración en el Nexo, Escape Dimensional
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <img src="../src/parques/arena-competitiva.jpg" alt="Arena Competitiva" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <h4 class="card-title">ARENA COMPETITIVA</h4>
+                            <p class="card-text">
+                                Espacios para competiciones multijugador con sistemas de seguimiento de movimiento, proyecciones 
+                                holográficas y equipamiento especializado que permite a los jugadores enfrentarse físicamente en 
+                                entornos digitales.
+                            </p>
+                            <p>
+                                <strong>Modalidades destacadas:</strong> Battle Royale Digital, Carreras Neo Circuit, Hackeo Competitivo
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Características Especiales -->
+            <h3 class="text-center mb-4">Características Especiales</h3>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="character-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center h-100 p-3" style="background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%);">
+                                    <i class="fas fa-trophy text-white" style="font-size: 4rem;"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                    <h4 class="card-title">SISTEMA DE RANKING GLOBAL</h4>
+                                    <p class="card-text">
+                                        Plataforma que conecta todas las salas PILTRIP Arcade Nexus del mundo, permitiendo competiciones 
+                                        globales, torneos internacionales y un sistema de clasificación que otorga recompensas tanto 
+                                        físicas como digitales.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="character-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center h-100 p-3" style="background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%);">
+                                    <i class="fas fa-users text-white" style="font-size: 4rem;"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                    <h4 class="card-title">EVENTOS NARRATIVOS</h4>
+                                    <p class="card-text">
+                                        Eventos especiales que ocurren simultáneamente en todas las salas y en el metaverso digital, 
+                                        donde los jugadores pueden participar en misiones colaborativas que afectan la evolución de 
+                                        la narrativa principal de PILTRIP.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="character-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center h-100 p-3" style="background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%);">
+                                    <i class="fas fa-cocktail text-white" style="font-size: 4rem;"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                    <h4 class="card-title">LOUNGE TEMÁTICO</h4>
+                                    <p class="card-text">
+                                        Área de descanso y socialización con decoración inspirada en el universo PILTRIP, donde se 
+                                        sirven bebidas y alimentos temáticos. Incluye mesas interactivas con juegos de mesa digitales 
+                                        y acceso a contenido exclusivo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="character-card h-100">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center justify-content-center h-100 p-3" style="background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%);">
+                                    <i class="fas fa-id-card text-white" style="font-size: 4rem;"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-3">
+                                    <h4 class="card-title">IDENTIDAD DIGITAL PERSISTENTE</h4>
+                                    <p class="card-text">
+                                        Sistema que permite a los jugadores mantener una identidad única a través de todas las 
+                                        experiencias PILTRIP, acumulando logros, personalizaciones y progreso que se refleja tanto 
+                                        en las salas físicas como en el metaverso digital.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mapa de Expansión -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">Plan de Expansión Global</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <img src="../src/parques/mapa-expansion.jpg" alt="Mapa de Expansión" class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3 class="mb-3">Fases de Implementación</h3>
+                    <div class="mb-4">
+                        <h5><span class="badge bg-primary me-2">FASE 1: 2025-2026</span> Primeras Salas Arcade</h5>
+                        <p>
+                            Apertura de las primeras 10 salas PILTRIP Arcade Nexus en ciudades clave: Tokio, Nueva York, 
+                            Londres, Seúl, San Francisco, Berlín, Shanghái, São Paulo, Dubái y Sídney.
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h5><span class="badge bg-success me-2">FASE 2: 2026-2027</span> Parque Temático Inaugural</h5>
+                        <p>
+                            Inauguración del primer PILTRIP Dimension Park en Orlando, Florida, con todas las áreas temáticas 
+                            y tecnologías innovadoras. Expansión de la red de salas arcade a 50 ubicaciones globales.
+                        </p>
+                    </div>
+                    <div class="mb-4">
+                        <h5><span class="badge bg-warning me-2">FASE 3: 2027-2030</span> Expansión Global</h5>
+                        <p>
+                            Apertura de parques temáticos adicionales en Asia y Europa. Implementación de la red completa 
+                            de 200 salas arcade en ciudades de todo el mundo, todas conectadas al metaverso central.
+                        </p>
+                    </div>
+                    <div>
+                        <h5><span class="badge bg-danger me-2">FASE 4: 2030+</span> Evolución Tecnológica</h5>
+                        <p>
+                            Implementación de tecnologías de próxima generación, incluyendo interfaces neurales no invasivas, 
+                            hologramas táctiles y sistemas de inmersión sensorial completa en todos los parques y salas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conexión con el Universo -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">Conexión con el Universo PILTRIP</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <a href="../universo-piltrip/personajes.html" class="text-decoration-none">
+                        <div class="character-card">
+                            <img src="../universo-piltrip/src/personajes/yeyo.png" alt="YEYO" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center p-3">
+                                <h5>YEYO</h5>
+                                <p>Protagonista de la atracción "Viaje Dimensional"</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="../universo-piltrip/personajes.html" class="text-decoration-none">
+                        <div class="character-card">
+                            <img src="../universo-piltrip/src/personajes/billie.png" alt="BILLIE" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center p-3">
+                                <h5>BILLIE</h5>
+                                <p>Guía en la experiencia "Resistencia Urbana"</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="../universo-piltrip/escenarios.html" class="text-decoration-none">
+                        <div class="character-card">
+                            <img src="../universo-piltrip/src/escenarios/nexo-central.png" alt="Nexo Central" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center p-3">
+                                <h5>NEXO CENTRAL</h5>
+                                <p>Inspiración para la plaza central del parque</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="../narrativas-piltrip/videojuegos.html" class="text-decoration-none">
+                        <div class="character-card">
+                            <img src="../narrativas-piltrip/src/videojuegos/juego-naves.jpg" alt="Juego de Naves" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center p-3">
+                                <h5>ORBITAL DEFENDER</h5>
+                                <p>Adaptado como atracción física en el parque</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario de Interés -->
+        <div class="menu-section mb-5">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="character-card p-4 text-center">
+                        <h3 class="mb-3">¿Quieres ser de los primeros en experimentar PILTRIP?</h3>
+                        <p class="lead mb-4">
+                            Regístrate para recibir actualizaciones sobre nuestros parques y salas, invitaciones a eventos 
+                            exclusivos y la oportunidad de participar en pruebas beta de nuestras experiencias.
+                        </p>
+                        <form class="text-start">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="tu@email.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="interes" class="form-label">Me interesa</label>
+                                <select class="form-select" id="interes">
+                                    <option selected>Selecciona una opción</option>
+                                    <option value="parque">Parque Temático</option>
+                                    <option value="arcade">Salas Arcade</option>
+                                    <option value="ambos">Ambas experiencias</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter">
+                                <label class="form-check-label" for="newsletter">Quiero recibir el newsletter de PILTRIP</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Registrarme</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-custom-dark text-light py-4">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://www.tiktok.com/@piltrip.alternatives" target="_blank" class="text-light me-3">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://x.com/piltrip" target="_blank" class="text-light me-3">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/@Piltrip" target="_blank" class="text-light me-3">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/piltrip/" target="_blank" class="text-light">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <a href="../index.html">
+                <img src="../src/logo-piltrip-3.png" alt="Logo de PILTRIP" height="40">
+            </a>
+            
+            <div class="my-3">
+                <a href="../contacto.html" class="text-light ms-3">Contacto</a>
+                <a href="../sobre-desarrollador.html" class="text-light ms-3">Sobre el Desarrollador</a>
+            </div>
+            <p class="mb-0">&copy; 2025 Piltrip. Explorando nuevos mundos, una historia a la vez.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

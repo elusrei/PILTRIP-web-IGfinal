@@ -3,14 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universo Digital - PILTRIP</title>
+    <title>Escenarios - Universo Digital PILTRIP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-
+    <style>
+        .video-thumbnail {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            height: 200px;
+        }
+        
+        .video-thumbnail:hover {
+            transform: scale(1.05);
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-thumbnail .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-thumbnail:hover .play-icon {
+            opacity: 1;
+        }
+        
+        .video-title {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .video-modal .modal-content {
+            background: linear-gradient(to right, #1a2b5f, #243775);
+            color: white;
+        }
+        
+        .video-modal .modal-header {
+            border-bottom: 1px solid #3a4d8c;
+        }
+        
+        .video-modal .modal-footer {
+            border-top: 1px solid #3a4d8c;
+        }
+        
+        .video-modal .btn-close {
+            filter: invert(1) brightness(200%);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .video-info {
+            margin-top: 1rem;
+        }
+        
+        .featured-video {
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -25,12 +107,15 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="../narrativas-piltrip/index.html">Narrativa</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Universo Digital</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Universo</a></li>
                     <li class="nav-item"><a class="nav-link" href="../merchandising-piltrip/index.html">Tiendas con Merch</a></li>
                     <li class="nav-item"><a class="nav-link" href="../parques-y-salas/index.html">Parque y Sala de Juegos</a></li>
                     <li class="nav-item"><a class="nav-link" href="../consumibles-piltrip/index.html">Consumibles</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../juego-piltrip/index.html">Juego Piltrip</a></li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="btn nav-link  text-white border rounded px-4 py-2 bg-custom-dark btn-primary:hover btn-dark:hover shadow-lg " href="../juego-piltrip/index.html">
+                            Juego Piltrip
+                        </a>
+                    </li>                </ul>
                 <ul class="navbar-nav d-flex flex-column ms-auto">
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="../contacto.html">
@@ -49,19 +134,22 @@
 
     <!-- Main Content -->
     <main class="container my-5">
-        <a href="index.html" class="text-decoration-none"><h1 class="text-center mb-5">UNIVERSO <span>PILTRIP</span></h1></a>
+        <a href="index.html" class="text-decoration-none"><h1 class="text-center mb-5">UNIVERSO <span>PILTRIP</span></h1></a>        
         
+        
+      
         <!-- Descripción -->
         <div class="menu-section mb-5">
+            <h2 class="text-center fst-italic">Escenarios</h2>
             <p class="lead text-center">
-                El Universo Digital de PILTRIP es un metaverso expansivo que combina elementos de realidad virtual, 
-                aumentada y física. Este espacio digital está compuesto por múltiples dimensiones interconectadas, 
-                cada una con sus propias reglas, habitantes y ecosistemas.
+                Explora los diversos escenarios del universo PILTRIP, cada uno con su propia atmósfera, 
+                reglas físicas y características únicas. Estos entornos digitales son el hogar de nuestros 
+                personajes y el escenario de sus aventuras.
             </p>
         </div>
 
         <!-- Menú Secundario -->
-        <div class="row">
+        <div class="row ">
             <div class="col-md-4"><a href="personajes.html">
                 <button class="menu-button">
                     <i class="fas fa-users mb-3 d-block" style="font-size: 2rem;"></i>
@@ -69,7 +157,7 @@
                 </button></a>
             </div>
             <div class="col-md-4"><a href="escenarios.html">
-                <button class="menu-button">
+                <button class="menu-button active">
                     <i class="fas fa-map mb-3 d-block" style="font-size: 2rem;"></i>
                     Escenarios
                 </button></a>
@@ -81,33 +169,344 @@
                 </button></a>
             </div>
         </div>
+
         
 
-        <!-- Preview Sections -->
-        
-        <div>
-            <div class="menu-section">
-                <h2 class="text-center mb-4">Escenarios del Universo</h2>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="character-card">
-                            <img src="https://via.placeholder.com/400/243775/ffffff?text=Ciudad+Nexus" alt="Ciudad Nexus" class="character-img">
-                            <div class="card-body">
-                                <h5 class="card-title">Ciudad Nexus</h5>
-                                <p class="card-text">Centro neurálgico del metaverso PILTRIP</p>
-                                <a href="escenarios.html" class="btn btn-primary">Explorar</a>
-                            </div>
+        <!-- Galería de Videos -->
+        <div class="menu-section">
+            <h2 class="text-center mb-4">Escenarios Del Universo</h2>
+            <div class="row">
+                <!-- Video 1 -->
+                <div class="col-md-3 mb-4">
+                    <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal1">
+                        <img src="src/escenarios/307609963110117379.mp4" alt="Escenario 1" id="thumbnail1">
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
                         </div>
                     </div>
-                    <!-- Más escenarios aquí -->
+                    <h5 class="video-title">DIMENSIÓN PÚRPURA</h5>
                 </div>
-                <div class="text-center mt-4">
-                    <a href="escenarios.html" class="btn btn-primary btn-lg">Ver todos los escenarios</a>
+                
+                <!-- Video 2 -->
+                <div class="col-md-3 mb-4">
+                    <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal2">
+                        <img src="src/escenarios/307834946239335608.mp4" alt="Escenario 2" id="thumbnail2">
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <h5 class="video-title">BOSQUE DIGITAL</h5>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="col-md-3 mb-4">
+                    <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal3">
+                        <img src="src/escenarios/308018895892828162.mp4" alt="Escenario 3" id="thumbnail3">
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <h5 class="video-title">JUNGLA VIRTUAL</h5>
+                </div>
+                
+                <!-- Video 4 -->
+                <div class="col-md-3 mb-4">
+                    <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal4">
+                        <img src="src/escenarios/308194615864445187.mp4" alt="Escenario 4" id="thumbnail4">
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <h5 class="video-title">CASCADA NEÓN</h5>
+                </div>
+                
+                <!-- Video 5 -->
+                <div class="col-md-3 mb-4">
+                    <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal5">
+                        <img src="src/escenarios/clipify-ai-20241117112041.mp4" alt="Escenario 5" id="thumbnail5">
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <h5 class="video-title">DIMENSIÓN ACUÁTICA</h5>
+                </div>
+                
+                <!-- Video 6 -->
+                <div class="col-md-3 mb-4">
+                    <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal6">
+                        <img src="src/escenarios/cm3lotobr03235ytt6cd7bnr.mp4" alt="Escenario 6" id="thumbnail6">
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <h5 class="video-title">NEBULOSA CÓSMICA</h5>
+                </div>
+                
+                <!-- Video 7 -->
+                <div class="col-md-3 mb-4">
+                    <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal7">
+                        <img src="src/escenarios/fondo menu de inicio0001-0250.mp4" alt="Escenario 7" id="thumbnail7">
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <h5 class="video-title">PORTAL DIMENSIONAL</h5>
+                </div>
+                
+                <!-- Video 8 -->
+                <div class="col-md-3 mb-4">
+                    <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal8">
+                        <img src="src/escenarios/VidnozImageToVideo (3).mp4" alt="Escenario 8" id="thumbnail8">
+                        <div class="play-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <h5 class="video-title">REINO PÚRPURA</h5>
                 </div>
             </div>
         </div>
-
     </main>
+
+    <!-- Modales de Video -->
+    <!-- Modal 1 -->
+    <div class="modal fade video-modal" id="videoModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title syncopate-bold">DIMENSIÓN PÚRPURA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="src/escenarios/307609963110117379.mp4" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <p>
+                            La Dimensión Púrpura es un escenario místico donde la energía digital se manifiesta 
+                            en tonos violetas y magentas. Este entorno es hogar de entidades digitales ancestrales 
+                            y contiene secretos del origen del metaverso PILTRIP.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade video-modal" id="videoModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title syncopate-bold">BOSQUE DIGITAL</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="src/escenarios/307834946239335608.mp4" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <p>
+                            El Bosque Digital es una simulación de ecosistema natural dentro del metaverso. 
+                            Sus plantas y árboles están compuestos de código vivo que evoluciona y se adapta 
+                            a las interacciones de los visitantes.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade video-modal" id="videoModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title syncopate-bold">JUNGLA VIRTUAL</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="src/escenarios/308018895892828162.mp4" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <p>
+                            La Jungla Virtual es una extensión más densa y salvaje del Bosque Digital. 
+                            En este escenario, las leyes de la física digital se distorsionan, creando 
+                            fenómenos únicos y desafiantes para los exploradores.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal fade video-modal" id="videoModal4" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title syncopate-bold">CASCADA NEÓN</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="src/escenarios/308194615864445187.mp4" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <p>
+                            La Cascada Neón es un flujo constante de datos puros que caen desde las alturas 
+                            del metaverso. Los usuarios pueden sumergirse en esta corriente para experimentar 
+                            visiones del pasado y posibles futuros del universo digital.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="modal fade video-modal" id="videoModal5" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title syncopate-bold">DIMENSIÓN ACUÁTICA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="src/escenarios/clipify-ai-20241117112041.mp4" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <p>
+                            La Dimensión Acuática es un vasto océano digital donde los datos fluyen como corrientes. 
+                            Este entorno sirve como nexo entre diferentes realidades del metaverso y alberga 
+                            entidades digitales ancestrales.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div class="modal fade video-modal" id="videoModal6" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title syncopate-bold">NEBULOSA CÓSMICA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="src/escenarios/cm3lotobr03235ytt6cd7bnr.mp4" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <p>
+                            La Nebulosa Cósmica representa el espacio exterior del metaverso PILTRIP. 
+                            En este vasto vacío digital, nuevos mundos y dimensiones están en constante 
+                            formación a partir de fragmentos de código y datos perdidos.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 7 -->
+    <div class="modal fade video-modal" id="videoModal7" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title syncopate-bold">PORTAL DIMENSIONAL</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="src/escenarios/fondo menu de inicio0001-0250.mp4" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <p>
+                            El Portal Dimensional es un punto de acceso entre diferentes realidades del metaverso. 
+                            Su superficie reflectante muestra ecos de otros mundos y permite a los usuarios 
+                            viajar entre las distintas dimensiones de PILTRIP.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 8 -->
+    <div class="modal fade video-modal" id="videoModal8" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title syncopate-bold">REINO PÚRPURA</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="src/escenarios/VidnozImageToVideo (3).mp4" type="video/mp4">
+                            Tu navegador no soporta videos HTML5.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <p>
+                            El Reino Púrpura es un dominio místico gobernado por entidades digitales ancestrales. 
+                            Sus paisajes violáceos y estructuras flotantes desafían la lógica convencional 
+                            y ocultan secretos sobre el origen del metaverso.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-custom-dark text-light py-4">
@@ -132,12 +531,92 @@
             
             <div class="my-3">
                 <a href="../contacto.html" class="text-light ms-3">Contacto</a>
-                <a href="../obre-desarrollador.html" class="text-light ms-3">Sobre el Desarrollador</a>
+                <a href="../sobre-desarrollador.html" class="text-light ms-3">Sobre el Desarrollador</a>
             </div>
             <p class="mb-0">&copy; 2025 Piltrip. Explorando nuevos mundos, una historia a la vez.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script para generar miniaturas de los videos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Función para generar miniaturas de video
+            function generateThumbnail(videoSrc, thumbnailId) {
+                const video = document.createElement('video');
+                video.src = videoSrc;
+                video.muted = true;
+                video.preload = 'metadata';
+                
+                video.addEventListener('loadeddata', function() {
+                    // Configurar el tiempo del video para capturar un frame interesante
+                    video.currentTime = 1.5;
+                    
+                    video.addEventListener('seeked', function() {
+                        // Crear un canvas para capturar el frame
+                        const canvas = document.createElement('canvas');
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+                        
+                        // Dibujar el frame en el canvas
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                        
+                        // Convertir el canvas a una URL de datos
+                        const dataUrl = canvas.toDataURL('image/jpeg');
+                        
+                        // Establecer la URL de datos como la fuente de la imagen de miniatura
+                        const thumbnail = document.getElementById(thumbnailId);
+                        if (thumbnail) {
+                            thumbnail.src = dataUrl;
+                        }
+                    });
+                });
+            }
+            
+            // Generar miniaturas para cada video
+            generateThumbnail('src/escenarios/307609963110117379.mp4', 'thumbnail1');
+            generateThumbnail('src/escenarios/307834946239335608.mp4', 'thumbnail2');
+            generateThumbnail('src/escenarios/308018895892828162.mp4', 'thumbnail3');
+            generateThumbnail('src/escenarios/308194615864445187.mp4', 'thumbnail4');
+            generateThumbnail('src/escenarios/clipify-ai-20241117112041.mp4', 'thumbnail5');
+            generateThumbnail('src/escenarios/cm3lotobr03235ytt6cd7bnr.mp4', 'thumbnail6');
+            generateThumbnail('src/escenarios/fondo menu de inicio0001-0250.mp4', 'thumbnail7');
+            generateThumbnail('src/escenarios/VidnozImageToVideo (3).mp4', 'thumbnail8');
+            
+            // Pausar el video destacado cuando se abre un modal
+            const videoModals = document.querySelectorAll('.video-modal');
+            const featuredVideo = document.getElementById('featured-video');
+            
+            videoModals.forEach(modal => {
+                modal.addEventListener('show.bs.modal', function() {
+                    if (featuredVideo) {
+                        featuredVideo.pause();
+                    }
+                });
+            });
+            
+            // Pausar los videos de los modales cuando se cierran
+            videoModals.forEach(modal => {
+                modal.addEventListener('hidden.bs.modal', function() {
+                    const video = this.querySelector('video');
+                    if (video) {
+                        video.pause();
+                    }
+                });
+            });
+            
+            // Reproducir automáticamente los videos al abrir el modal
+            videoModals.forEach(modal => {
+                modal.addEventListener('shown.bs.modal', function() {
+                    const video = this.querySelector('video');
+                    if (video) {
+                        video.play();
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+

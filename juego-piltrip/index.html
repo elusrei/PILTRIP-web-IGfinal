@@ -3,9 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nave PILTRIP</title>
+    <title>Juego PILTRIP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <!-- Header -->
+    <header class="bg-custom-dark text-light py-3">
+        <nav class="container navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../src/logo-piltrip-3.png" alt="logo de PILTRIP" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../narrativas-piltrip/index.html">Narrativa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../universo-piltrip/index.html">Universo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../merchandising-piltrip/index.html">Tiendas con Merch</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../parques-y-salas/index.html">Parque y Sala de Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../consumibles-piltrip/index.html">Consumibles</a></li>
+                    <li class="nav-item">
+                        <a class="btn nav-link active text-white border rounded px-4 py-2 bg-custom-dark btn-primary:hover btn-dark:hover shadow-lg" href="index.html">
+                            Juego Piltrip
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-flex flex-column ms-auto">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../contacto.html">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../sobre-desarrollador.html">
+                            <i class="fas fa-user"></i> Desarrollador
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <h1 class="text-center mb-5">JUEGO <span>PILTRIP</span></h1>
+        
+        <div class="menu-section mb-5">
+            <h2 class="text-center fst-italic mb-4">Navegante Espacial</h2>
+            <p class="lead text-center">
+                Pilota tu nave a través del espacio digital del metaverso PILTRIP, esquivando satélites y recolectando 
+                cristales azules en esta emocionante aventura de scroll vertical. ¡Consigue la mayor puntuación posible!
+            </p>
+        </div>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-10">
+                <div class="menu-section p-0 overflow-hidden">
+                    <div class="position-relative">
+                        <!-- Pantalla de inicio -->
+                        <div id="pantalla-inicio" class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="z-index: 10;">
+                            <div class="bg-custom-dark bg-opacity-75 p-4 rounded text-center">
+                                <h2 class="fs-3 fw-bold mb-3">PILTRIP: Navegante Espacial</h2>
+                                <p class="mb-4">Esquiva los satélites y sobrevive el mayor tiempo posible.</p>
+                                <button id="btn-iniciar" class="btn btn-primary">Iniciar Juego</button>
+                            </div>
+                        </div>
+
+                        <!-- Pantalla de game over (oculta inicialmente) -->
+                        <div id="pantalla-gameover" class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style="z-index: 10; display: none;">
+                            <div class="bg-custom-dark bg-opacity-75 p-4 rounded text-center">
+                                <h2 class="fs-3 fw-bold mb-2">¡Juego Terminado!</h2>
+                                <p class="fs-5 mb-2">Puntuación: <span id="puntuacion-final">0</span></p>
+                                <p class="fs-6 mb-4">Récord: <span id="record">0</span></p>
+                                <button id="btn-reiniciar" class="btn btn-primary">Jugar de Nuevo</button>
+                            </div>
+                        </div>
+
+                        <!-- Canvas del juego -->
+                        <canvas id="game-canvas" width="800" height="600" style="background: linear-gradient(to bottom, #0f172a, #1a2b5f); display: block; width: 100%; height: auto;"></canvas>
+
+                        <!-- Marcador de puntuación (oculto inicialmente) -->
+                        <div id="marcador" class="position-absolute top-0 start-0 m-3 bg-custom-dark bg-opacity-75 px-3 py-2 rounded" style="display: none;">
+                            <p class="fs-5 fw-bold mb-0">Puntuación: <span id="puntuacion-actual">0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="menu-section h-100">
+                    <h2 class="text-center mb-4">Controles</h2>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="d-grid" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                            <div></div>
+                            <button class="btn btn-primary p-3 d-flex justify-content-center align-items-center">
+                                <i class="fas fa-arrow-up"></i>
+                            </button>
+                            <div></div>
+                            <button class="btn btn-primary p-3 d-flex justify-content-center align-items-center">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <button class="btn btn-primary p-3 d-flex justify-content-center align-items-center">
+                                <i class="fas fa-arrow-down"></i>
+                            </button>
+                            <button class="btn btn-primary p-3 d-flex justify-content-center align-items-center">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-center">
+                        Usa las flechas del teclado para mover la nave y esquivar los satélites.
+                        Mantén pulsada la tecla ESPACIO para disparar contra los obstáculos.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="menu-section h-100">
+                    <h2 class="text-center mb-4">Objetivos</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="background: transparent; color: white;">
+                            <i class="fas fa-rocket me-2"></i>
+                            Pilota tu nave a través del espacio digital
+                        </li>
+                        <li class="list-group-item" style="background: transparent; color: white;">
+                            <i class="fas fa-satellite me-2"></i>
+                            Esquiva los satélites y obstáculos
+                        </li>
+                        <li class="list-group-item" style="background: transparent; color: white;">
+                            <i class="fas fa-gem me-2"></i>
+                            Recolecta cristales azules para aumentar tu puntuación
+                        </li>
+                        <li class="list-group-item" style="background: transparent; color: white;">
+                            <i class="fas fa-bolt me-2"></i>
+                            Recoge power-ups para mejorar tu nave
+                        </li>
+                        <li class="list-group-item" style="background: transparent; color: white;">
+                            <i class="fas fa-trophy me-2"></i>
+                            Consigue la mayor puntuación posible
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">Elementos del Juego</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <img src="../src/juego/nave.jpg" alt="Nave del Jugador" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <h4 class="card-title">Nave del Jugador</h4>
+                            <p class="card-text">
+                                Inspirada en el vehículo de YEYO, esta nave puede moverse en todas direcciones y disparar 
+                                rayos de energía para destruir obstáculos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <img src="../src/juego/satelites.jpg" alt="Satélites" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <h4 class="card-title">Satélites</h4>
+                            <p class="card-text">
+                                Obstáculos que aparecen en patrones aleatorios. Algunos son indestructibles, mientras que 
+                                otros pueden ser destruidos con disparos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <img src="../src/juego/cristales.jpg" alt="Cristales Azules" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-3">
+                            <h4 class="card-title">Cristales Azules</h4>
+                            <p class="card-text">
+                                Colecciónalos para aumentar tu puntuación. Los cristales más grandes y raros otorgan más puntos 
+                                pero son más difíciles de conseguir.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">Power-Ups</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="character-card text-center h-100">
+                        <div class="d-flex align-items-center justify-content-center" style="height: 100px; background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);">
+                            <i class="fas fa-shield-alt text-white" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Escudo</h5>
+                            <p class="card-text">Protege tu nave de un impacto</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="character-card text-center h-100">
+                        <div class="d-flex align-items-center justify-content-center" style="height: 100px; background: linear-gradient(135deg, #FF69B4 0%, #C71585 100%);">
+                            <i class="fas fa-bolt text-white" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Velocidad</h5>
+                            <p class="card-text">Aumenta la velocidad de tu nave</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="character-card text-center h-100">
+                        <div class="d-flex align-items-center justify-content-center" style="height: 100px; background: linear-gradient(135deg, #FFA500 0%, #FF4500 100%);">
+                            <i class="fas fa-fire text-white" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Disparo Doble</h5>
+                            <p class="card-text">Mejora el arma de tu nave</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="character-card text-center h-100">
+                        <div class="d-flex align-items-center justify-content-center" style="height: 100px; background: linear-gradient(135deg, #87CEEB 0%, #4682B4 100%);">
+                            <i class="fas fa-bomb text-white" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body p-3">
+                            <h5 class="card-title">Bomba</h5>
+                            <p class="card-text">Destruye todos los obstáculos en pantalla</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">Tabla de Clasificación</h2>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Jugador</th>
+                            <th scope="col">Puntuación</th>
+                            <th scope="col">Cristales</th>
+                            <th scope="col">Tiempo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>X-42</td>
+                            <td>15,420</td>
+                            <td>78</td>
+                            <td>5:23</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>BILLIE</td>
+                            <td>12,850</td>
+                            <td>64</td>
+                            <td>4:45</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>YEYO</td>
+                            <td>10,320</td>
+                            <td>52</td>
+                            <td>3:58</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>BEAR</td>
+                            <td>8,740</td>
+                            <td>43</td>
+                            <td>3:12</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>X-01</td>
+                            <td>7,560</td>
+                            <td>38</td>
+                            <td>2:45</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="text-center mb-4">Conexión con el Universo PILTRIP</h2>
+            <p class="lead text-center mb-4">
+                Este juego está ambientado en el espacio digital del metaverso PILTRIP, donde los personajes 
+                navegan entre dimensiones a través de corredores espaciales llenos de satélites y cristales de datos.
+            </p>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <a href="../universo-piltrip/personajes.html" class="text-decoration-none">
+                        <div class="character-card">
+                            <img src="../universo-piltrip/src/personajes/yeyo.png" alt="YEYO" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center p-3">
+                                <h5>YEYO</h5>
+                                <p>Piloto de la nave original</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="../universo-piltrip/escenarios.html" class="text-decoration-none">
+                        <div class="character-card">
+                            <img src="../universo-piltrip/src/escenarios/espacio-digital.png" alt="Espacio Digital" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center p-3">
+                                <h5>ESPACIO DIGITAL</h5>
+                                <p>Escenario del juego</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="../universo-piltrip/items.html" class="text-decoration-none">
+                        <div class="character-card">
+                            <img src="../universo-piltrip/src/items/cristal-azul.png" alt="Cristal Azul" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center p-3">
+                                <h5>CRISTAL AZUL</h5>
+                                <p>Elemento coleccionable</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <a href="../narrativas-piltrip/comics-y-animados.html" class="text-decoration-none">
+                        <div class="character-card">
+                            <img src="../narrativas-piltrip/src/comics/comic-1.jpg" alt="Comic" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                            <div class="card-body text-center p-3">
+                                <h5>HISTORIA</h5>
+                                <p>Origen de la aventura</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-custom-dark text-light py-4">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://www.tiktok.com/@piltrip.alternatives" target="_blank" class="text-light me-3">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://x.com/piltrip" target="_blank" class="text-light me-3">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/@Piltrip" target="_blank" class="text-light me-3">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/piltrip/" target="_blank" class="text-light">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <a href="../index.html">
+                <img src="../src/logo-piltrip-3.png" alt="Logo de PILTRIP" height="40">
+            </a>
+            
+            <div class="my-3">
+                <a href="../contacto.html" class="text-light ms-3">Contacto</a>
+                <a href="../sobre-desarrollador.html" class="text-light ms-3">Sobre el Desarrollador</a>
+            </div>
+            <p class="mb-0">&copy; 2025 Piltrip. Explorando nuevos mundos, una historia a la vez.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script básico para mostrar/ocultar pantallas (sin funcionalidad de juego)
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnIniciar = document.getElementById('btn-iniciar');
+            const btnReiniciar = document.getElementById('btn-reiniciar');
+            const pantallaInicio = document.getElementById('pantalla-inicio');
+            const pantallaGameover = document.getElementById('pantalla-gameover');
+            const marcador = document.getElementById('marcador');
+            
+            btnIniciar.addEventListener('click', function() {
+                pantallaInicio.style.display = 'none';
+                marcador.style.display = 'block';
+                // Aquí iría la lógica para iniciar el juego
+            });
+            
+            btnReiniciar.addEventListener('click', function() {
+                pantallaGameover.style.display = 'none';
+                marcador.style.display = 'block';
+                // Aquí iría la lógica para reiniciar el juego
+            });
+        });
+    </script>
 </body>
 </html>

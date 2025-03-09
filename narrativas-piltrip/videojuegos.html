@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojuegos - PILTRIP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-custom-dark text-light py-3">
+        <nav class="container navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../src/logo-piltrip-3.png" alt="logo de PILTRIP" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Narrativa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../universo-piltrip/index.html">Universo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../merchandising-piltrip/index.html">Tiendas con Merch</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../parques-y-salas/index.html">Parque y Sala de Juegos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../consumibles-piltrip/index.html">Consumibles</a></li>
+                    <li class="nav-item">
+                        <a class="btn nav-link text-white border rounded px-4 py-2 bg-custom-dark btn-primary:hover btn-dark:hover shadow-lg" href="../juego-piltrip/index.html">
+                            Juego Piltrip
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-flex flex-column ms-auto">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../contacto.html">
+                            <i class="fas fa-envelope"></i> Contacto
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../sobre-desarrollador.html">
+                            <i class="fas fa-user"></i> Desarrollador
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <a href="index.html" class="text-decoration-none"><h1 class="text-center mb-5">NARRATIVAS <span>PILTRIP</span></h1></a>
+        
+        <!-- Descripción -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center fst-italic">Videojuegos</h2>
+            <p class="lead text-center">
+                Explora el universo PILTRIP a través de experiencias interactivas que expanden la narrativa y te permiten 
+                formar parte activa de este fascinante metaverso. Desde aventuras conversacionales hasta juegos de acción, 
+                cada título ofrece una perspectiva única de este mundo digital.
+            </p>
+        </div>
+
+        <!-- Menú Secundario de Narrativas -->
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <a href="comics-y-animados.html">
+                    <button class="menu-button">
+                        <i class="fas fa-book-open mb-3 d-block" style="font-size: 2rem;"></i>
+                        Comics y Animados
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="microserie.html">
+                    <button class="menu-button">
+                        <i class="fas fa-film mb-3 d-block" style="font-size: 2rem;"></i>
+                        Microserie
+                    </button>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="videojuegos.html">
+                    <button class="menu-button active">
+                        <i class="fas fa-gamepad mb-3 d-block" style="font-size: 2rem;"></i>
+                        Videojuegos
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mapa Interactivo -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">Mapa Interactivo del Metaverso</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="position-relative" style="height: 500px; background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%); border-radius: 15px; overflow: hidden;">
+                        <div class="position-absolute" style="top: 20%; left: 30%;">
+                            <a href="#aventura-conversacional" class="position-relative d-inline-block">
+                                <div class="bg-primary rounded-circle p-3 pulse-animation">
+                                    <i class="fas fa-comments text-white" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <span class="position-absolute text-white fw-bold" style="top: -30px; left: 50%; transform: translateX(-50%);">Nexo Narrativo</span>
+                            </a>
+                        </div>
+                        <div class="position-absolute" style="top: 40%; left: 60%;">
+                            <a href="#juego-naves" class="position-relative d-inline-block">
+                                <div class="bg-danger rounded-circle p-3 pulse-animation">
+                                    <i class="fas fa-rocket text-white" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <span class="position-absolute text-white fw-bold" style="top: -30px; left: 50%; transform: translateX(-50%);">Sector Orbital</span>
+                            </a>
+                        </div>
+                        <div class="position-absolute" style="top: 70%; left: 20%;">
+                            <a href="#juego-carreras" class="position-relative d-inline-block">
+                                <div class="bg-success rounded-circle p-3 pulse-animation">
+                                    <i class="fas fa-car text-white" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <span class="position-absolute text-white fw-bold" style="top: -30px; left: 50%; transform: translateX(-50%);">Circuito Neo</span>
+                            </a>
+                        </div>
+                        <div class="position-absolute" style="top: 50%; left: 80%;">
+                            <a href="../universo-piltrip/index.html" class="position-relative d-inline-block">
+                                <div class="bg-warning rounded-circle p-3 pulse-animation">
+                                    <i class="fas fa-globe text-white" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <span class="position-absolute text-white fw-bold" style="top: -30px; left: 50%; transform: translateX(-50%);">Explorar Universo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="h-100 d-flex flex-column justify-content-center">
+                        <h3 class="mb-4">Portal al Metaverso</h3>
+                        <p class="lead">
+                            Este mapa interactivo te permite acceder a las diferentes experiencias de juego disponibles en el universo PILTRIP.
+                        </p>
+                        <p>
+                            Cada punto representa una zona del metaverso con su propia experiencia de juego única. Haz clic en los puntos para explorar cada experiencia.
+                        </p>
+                        <a href="../universo-piltrip/metaverso.html" class="btn btn-primary mt-3">
+                            <i class="fas fa-vr-cardboard me-2"></i> Acceder al Metaverso Completo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aventura Conversacional -->
+        <div id="aventura-conversacional" class="menu-section mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../src/videojuegos/aventura-conversacional.jpg" alt="Aventura Conversacional" class="img-fluid rounded-3 mb-3 mb-md-0">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mb-3">NEXO NARRATIVO: Aventura Conversacional</h2>
+                    <p class="lead">
+                        Sumérgete en una aventura conversacional donde tus decisiones moldean la historia y determinan el destino del metaverso PILTRIP.
+                    </p>
+                    <p>
+                        En "Nexo Narrativo", te conviertes en un viajero digital que acaba de despertar en el metaverso sin recuerdos de su pasado. A través de diálogos con personajes clave y decisiones críticas, descubrirás tu verdadera identidad y tu papel en el conflicto que amenaza con destruir este mundo digital.
+                    </p>
+                    <p>
+                        Esta aventura conversacional combina elementos de novela visual con mecánicas de RPG, permitiéndote desarrollar relaciones con otros personajes, desbloquear habilidades especiales y descubrir múltiples finales basados en tus elecciones.
+                    </p>
+                    <div class="d-flex mt-4">
+                        <a href="#" class="btn btn-primary me-3">Jugar Ahora</a>
+                        <a href="../universo-piltrip/personajes.html" class="btn btn-outline-light">Conoce a los Personajes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Juego de Naves -->
+        <div id="juego-naves" class="menu-section mb-5">
+            <div class="row">
+                <div class="col-md-6 order-md-2">
+                    <img src="../src/videojuegos/juego-naves.jpg" alt="Juego de Naves" class="img-fluid rounded-3 mb-3 mb-md-0">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h2 class="mb-3">ORBITAL DEFENDER: Esquiva Satélites</h2>
+                    <p class="lead">
+                        Pilota una nave digital a través del espacio orbital del metaverso, esquivando satélites y sistemas de defensa mientras recopilas datos cruciales.
+                    </p>
+                    <p>
+                        En "Orbital Defender", te pones en los controles de una nave de infiltración diseñada para atravesar las defensas orbitales que protegen el núcleo del metaverso. Tu misión es navegar a través de campos de satélites, evitar sistemas de defensa automatizados y recopilar fragmentos de código que revelarán secretos sobre la verdadera naturaleza del universo PILTRIP.
+                    </p>
+                    <p>
+                        Este juego de acción combina mecánicas de esquiva con elementos de shooter, ofreciendo una experiencia frenética que pone a prueba tus reflejos y habilidades de pilotaje. Cada nivel superado desbloquea nueva información sobre la trama principal.
+                    </p>
+                    <div class="d-flex mt-4">
+                        <a href="#" class="btn btn-primary me-3">Jugar Ahora</a>
+                        <a href="../universo-piltrip/items.html" class="btn btn-outline-light">Mejoras para tu Nave</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Juego de Carreras -->
+        <div id="juego-carreras" class="menu-section mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="../src/videojuegos/juego-carreras.jpg" alt="Juego de Carreras" class="img-fluid rounded-3 mb-3 mb-md-0">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="mb-3">NEO CIRCUIT: Carreras Avanzadas</h2>
+                    <p class="lead">
+                        Compite en las peligrosas pistas del Circuito Neo, donde la física convencional no existe y los controles de maniobra son la clave para la victoria.
+                    </p>
+                    <p>
+                        En "Neo Circuit", te sumerges en el mundo clandestino de las carreras digitales del metaverso PILTRIP. Pilota vehículos futuristas a través de pistas imposibles que desafían la gravedad y las leyes de la física. El juego presenta un sistema de control avanzado que te permite realizar maniobras imposibles como deslizamientos laterales en paredes verticales, saltos dimensionales y giros de 360 grados en cualquier eje.
+                    </p>
+                    <p>
+                        Cada victoria te acerca más a la élite de pilotos del metaverso y desbloquea nuevos vehículos, pistas y habilidades. Además, las carreras están integradas en la narrativa principal, revelando información crucial sobre la estructura del universo PILTRIP y sus habitantes.
+                    </p>
+                    <div class="d-flex mt-4">
+                        <a href="#" class="btn btn-primary me-3">Jugar Ahora</a>
+                        <a href="../universo-piltrip/escenarios.html" class="btn btn-outline-light">Explorar Pistas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Próximos Lanzamientos -->
+        <div class="menu-section mb-5">
+            <h2 class="text-center mb-4">Próximos Lanzamientos</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <div class="position-relative">
+                            <img src="../src/videojuegos/proximo-1.jpg" alt="Próximo Juego 1" class="img-fluid w-100" style="height: 200px; object-fit: cover; filter: brightness(0.7);">
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                                <span class="badge bg-danger p-2">PRÓXIMAMENTE</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <h4 class="card-title">PILTRIP: REALIDAD FRACTURADA</h4>
+                            <p class="card-text">Un RPG de mundo abierto donde explorarás las diferentes dimensiones del metaverso PILTRIP.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <div class="position-relative">
+                            <img src="../src/videojuegos/proximo-2.jpg" alt="Próximo Juego 2" class="img-fluid w-100" style="height: 200px; object-fit: cover; filter: brightness(0.7);">
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                                <span class="badge bg-danger p-2">PRÓXIMAMENTE</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <h4 class="card-title">BATALLA POR EL NEXO</h4>
+                            <p class="card-text">Un juego de estrategia por turnos donde comandarás a las fuerzas de la resistencia contra la corporación.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="character-card h-100">
+                        <div class="position-relative">
+                            <img src="../src/videojuegos/proximo-3.jpg" alt="Próximo Juego 3" class="img-fluid w-100" style="height: 200px; object-fit: cover; filter: brightness(0.7);">
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                                <span class="badge bg-danger p-2">PRÓXIMAMENTE</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <h4 class="card-title">PILTRIP VR</h4>
+                            <p class="card-text">La experiencia definitiva en realidad virtual que te permitirá habitar el metaverso PILTRIP como nunca antes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-custom-dark text-light py-4">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://www.tiktok.com/@piltrip.alternatives" target="_blank" class="text-light me-3">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://x.com/piltrip" target="_blank" class="text-light me-3">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.youtube.com/@Piltrip" target="_blank" class="text-light me-3">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/piltrip/" target="_blank" class="text-light">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <a href="../index.html">
+                <img src="../src/logo-piltrip-3.png" alt="Logo de PILTRIP" height="40">
+            </a>
+            
+            <div class="my-3">
+                <a href="../contacto.html" class="text-light ms-3">Contacto</a>
+                <a href="../sobre-desarrollador.html" class="text-light ms-3">Sobre el Desarrollador</a>
+            </div>
+            <p class="mb-0">&copy; 2025 Piltrip. Explorando nuevos mundos, una historia a la vez.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+            }
+            
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+            }
+            
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+    </style>
+</body>
+</html>
