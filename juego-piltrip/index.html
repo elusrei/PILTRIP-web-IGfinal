@@ -10,71 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        #game-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        #game-canvas {
-            display: block;
-            width: 100%;
-            height: auto;
-            background: linear-gradient(to bottom, #0f172a, #1a2b5f);
-        }
-        
-        .game-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-        }
-        
-        .game-panel {
-            background: rgba(26, 43, 95, 0.85);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            max-width: 80%;
-        }
-        
-        #propulsion-container {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            display: flex;
-            gap: 5px;
-        }
-        
-        .propulsion-indicator {
-            width: 30px;
-            height: 10px;
-            background-color: #4a6bdb;
-            border-radius: 5px;
-        }
-        
-        .propulsion-indicator.empty {
-            background-color: rgba(74, 107, 219, 0.3);
-        }
-        
-        .control-info {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background: rgba(26, 43, 95, 0.7);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            color: white;
-        }
-    </style>
+
 </head>
 <body>
     <!-- Header -->
@@ -210,7 +146,7 @@
                             <button class="btn btn-success p-3 w-100">
                                 <i class="fas fa-rocket me-2"></i>SHIFT
                             </button>
-                            <p class="mt-2">Propulsión (3 usos)</p>
+                            <p class="mt-2">Desacelerador de satelites (3 usos)</p>
                         </div>
                         <div class="col-md-6 text-center">
                             <button class="btn btn-danger p-3 w-100">
@@ -243,7 +179,7 @@
                         </li>
                         <li class="list-group-item" style="background: transparent; color: white;">
                             <i class="fas fa-rocket me-2"></i>
-                            Usa la propulsión para escapar de situaciones peligrosas
+                            Usa la propulsión para detener satelites en situaciones peligrosas
                         </li>
                     </ul>
                 </div>

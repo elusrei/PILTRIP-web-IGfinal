@@ -126,41 +126,52 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para crear un nuevo asteroide
     function crearAsteroide() {
       const ancho = Math.random() * 30 + 20 // Ancho entre 20 y 50
-      const tipo = Math.floor(Math.random() * 4) // 0: arriba, 1: derecha, 2: izquierda, 3: abajo
+      const isMobile = window.innerWidth <= 768
+  
       let x,
         y,
         velocidadX = 0,
         velocidadY = 0
   
-      switch (tipo) {
-        case 0: // Desde arriba
-          x = Math.random() * (canvas.width - ancho)
-          y = -ancho
-          velocidadY = Math.random() * 2 + 1 + nivel * 0.5
-          break
-        case 1: // Desde la derecha
-          x = canvas.width + ancho
-          y = Math.random() * (canvas.height - ancho)
-          velocidadX = -(Math.random() * 2 + 1 + nivel * 0.5)
-          break
-        case 2: // Desde la izquierda
-          x = -ancho
-          y = Math.random() * (canvas.height - ancho)
-          velocidadX = Math.random() * 2 + 1 + nivel * 0.5
-          break
-        case 3: // Desde abajo (menos frecuente)
-          if (Math.random() < 0.3) {
-            // Solo 30% de probabilidad
-            x = Math.random() * (canvas.width - ancho)
-            y = canvas.height + ancho
-            velocidadY = -(Math.random() * 2 + 1 + nivel * 0.5)
-          } else {
-            // Si no se crea desde abajo, crear desde arriba
+      if (isMobile) {
+        // On mobile, asteroids only come from top
+        x = Math.random() * (canvas.width - ancho)
+        y = -ancho
+        velocidadY = Math.random() * 2 + 1 + nivel * 0.5
+      } else {
+        // On desktop, keep original behavior with random directions
+        const tipo = Math.floor(Math.random() * 4) // 0: arriba, 1: derecha, 2: izquierda, 3: abajo
+  
+        switch (tipo) {
+          case 0: // Desde arriba
             x = Math.random() * (canvas.width - ancho)
             y = -ancho
             velocidadY = Math.random() * 2 + 1 + nivel * 0.5
-          }
-          break
+            break
+          case 1: // Desde la derecha
+            x = canvas.width + ancho
+            y = Math.random() * (canvas.height - ancho)
+            velocidadX = -(Math.random() * 2 + 1 + nivel * 0.5)
+            break
+          case 2: // Desde la izquierda
+            x = -ancho
+            y = Math.random() * (canvas.height - ancho)
+            velocidadX = Math.random() * 2 + 1 + nivel * 0.5
+            break
+          case 3: // Desde abajo (menos frecuente)
+            if (Math.random() < 0.3) {
+              // Solo 30% de probabilidad
+              x = Math.random() * (canvas.width - ancho)
+              y = canvas.height + ancho
+              velocidadY = -(Math.random() * 2 + 1 + nivel * 0.5)
+            } else {
+              // Si no se crea desde abajo, crear desde arriba
+              x = Math.random() * (canvas.width - ancho)
+              y = -ancho
+              velocidadY = Math.random() * 2 + 1 + nivel * 0.5
+            }
+            break
+        }
       }
   
       const asteroide = {
@@ -177,8 +188,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Función para actualizar la posición de la nave
     function actualizarNave(deltaTime) {
-      // Mantener velocidad base de la nave 
+      // Mantener velocidad base de la nave
       nave.velocidad = nave.velocidadBase
+  
+      // Check if on mobile device
+      const isMobile = window.innerWidth <= 768
   
       // Calcular velocidad en X e Y
       if (nave.frenando) {
@@ -196,13 +210,21 @@ document.addEventListener("DOMContentLoaded", () => {
           nave.velocidadX *= 0.92
         }
   
-        if (nave.movArriba) {
-          nave.velocidadY = -nave.velocidad
-        } else if (nave.movAbajo) {
-          nave.velocidadY = nave.velocidad
+        // On mobile, disable vertical movement
+        if (!isMobile) {
+          if (nave.movArriba) {
+            nave.velocidadY = -nave.velocidad
+          } else if (nave.movAbajo) {
+            nave.velocidadY = nave.velocidad
+          } else {
+            // Desaceleración natural en Y
+            nave.velocidadY *= 0.92
+          }
         } else {
-          // Desaceleración natural en Y
-          nave.velocidadY *= 0.92
+          // On mobile, gradually reset Y position to 80% of canvas height
+          const targetY = canvas.height * 0.8 - nave.alto / 2
+          nave.y += (targetY - nave.y) * 0.05
+          nave.velocidadY = 0
         }
       }
   
@@ -351,8 +373,11 @@ document.addEventListener("DOMContentLoaded", () => {
       asteroides = []
       propulsionesDisponibles = 3
   
+      const isMobile = window.innerWidth <= 768
+  
       nave.x = canvas.width / 2 - 25
-      nave.y = canvas.height - 100
+      // On mobile, position the ship at 80% of canvas height
+      nave.y = isMobile ? canvas.height * 0.8 - nave.alto / 2 : canvas.height - 100
       nave.velocidadX = 0
       nave.velocidadY = 0
   
@@ -365,7 +390,7 @@ document.addEventListener("DOMContentLoaded", () => {
       pantallaGameover.style.display = "none"
       marcador.style.display = "block"
       propulsionContainer.style.display = "flex"
-      controlInfo.style.display = "block"
+      controlInfo.style.display = isMobile ? "none" : "block"
   
       ultimoTiempo = performance.now()
       requestAnimationFrame(gameLoop)
@@ -420,6 +445,164 @@ document.addEventListener("DOMContentLoaded", () => {
   
     window.addEventListener("resize", ajustarCanvas)
     ajustarCanvas() // Ajustar al cargar
+  
+    // Add touch controls for mobile
+    // Add this after the keyboard event listeners
+    function agregarControlesTactiles() {
+      // Create mobile control elements
+      const mobileControls = document.createElement("div")
+      mobileControls.id = "mobile-controls"
+      mobileControls.style.cssText = `
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 20px;
+          pointer-events: none;
+        `
+  
+      // Left control
+      const leftControl = document.createElement("button")
+      leftControl.classList.add("mobile-btn")
+      leftControl.innerHTML = '<i class="fas fa-arrow-left"></i>'
+      leftControl.style.cssText = `
+          width: 60px;
+          height: 60px;
+          background: rgba(58, 77, 140, 0.7);
+          border: none;
+          border-radius: 50%;
+          color: white;
+          font-size: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          pointer-events: auto;
+        `
+  
+      // Right control
+      const rightControl = document.createElement("button")
+      rightControl.classList.add("mobile-btn")
+      rightControl.innerHTML = '<i class="fas fa-arrow-right"></i>'
+      rightControl.style.cssText = `
+          width: 60px;
+          height: 60px;
+          background: rgba(58, 77, 140, 0.7);
+          border: none;
+          border-radius: 50%;
+          color: white;
+          font-size: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          pointer-events: auto;
+        `
+  
+      // Action buttons container
+      const actionControls = document.createElement("div")
+      actionControls.style.cssText = `
+          display: flex;
+          gap: 10px;
+          pointer-events: auto;
+        `
+  
+      // Propulsion button
+      const propulsionBtn = document.createElement("button")
+      propulsionBtn.classList.add("mobile-btn")
+      propulsionBtn.innerHTML = '<i class="fas fa-rocket"></i>'
+      propulsionBtn.style.cssText = `
+          width: 60px;
+          height: 60px;
+          background: rgba(76, 175, 80, 0.7);
+          border: none;
+          border-radius: 50%;
+          color: white;
+          font-size: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        `
+  
+      // Brake button
+      const brakeBtn = document.createElement("button")
+      brakeBtn.classList.add("mobile-btn")
+      brakeBtn.innerHTML = '<i class="fas fa-stop-circle"></i>'
+      brakeBtn.style.cssText = `
+          width: 60px;
+          height: 60px;
+          background: rgba(255, 69, 0, 0.7);
+          border: none;
+          border-radius: 50%;
+          color: white;
+          font-size: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        `
+  
+      // Add buttons to containers
+      actionControls.appendChild(propulsionBtn)
+      actionControls.appendChild(brakeBtn)
+      mobileControls.appendChild(leftControl)
+      mobileControls.appendChild(actionControls)
+      mobileControls.appendChild(rightControl)
+  
+      // Add to game container
+      gameContainer.appendChild(mobileControls)
+  
+      // Hide on desktop
+      function updateControlsVisibility() {
+        mobileControls.style.display = window.innerWidth <= 768 ? "flex" : "none"
+      }
+  
+      window.addEventListener("resize", updateControlsVisibility)
+      updateControlsVisibility()
+  
+      // Touch event handlers
+      leftControl.addEventListener("touchstart", () => {
+        nave.movIzquierda = true
+      })
+  
+      leftControl.addEventListener("touchend", () => {
+        nave.movIzquierda = false
+      })
+  
+      rightControl.addEventListener("touchstart", () => {
+        nave.movDerecha = true
+      })
+  
+      rightControl.addEventListener("touchend", () => {
+        nave.movDerecha = false
+      })
+  
+      propulsionBtn.addEventListener("touchstart", () => {
+        if (propulsionesDisponibles > 0 && !nave.propulsion) {
+          nave.propulsion = true
+          propulsionesDisponibles--
+          actualizarIndicadoresPropulsion()
+        }
+      })
+  
+      propulsionBtn.addEventListener("touchend", () => {
+        nave.propulsion = false
+        nave.velocidad = nave.velocidadBase
+      })
+  
+      brakeBtn.addEventListener("touchstart", () => {
+        nave.frenando = true
+        nave.velocidadX = 0
+        nave.velocidadY = 0
+      })
+  
+      brakeBtn.addEventListener("touchend", () => {
+        nave.frenando = false
+      })
+    }
+  
+    // Call the function to add mobile controls at the end of the DOMContentLoaded event
+    // Add this right before the closing of the DOMContentLoaded event handler
+    agregarControlesTactiles()
   })
   
   
