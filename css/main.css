@@ -1,0 +1,229 @@
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syncopate:wght@400;700&display=swap");
+
+/* Font classes */
+.syncopate-regular {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.syncopate-bold {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Base styles */
+body {
+  background: linear-gradient(to bottom, #1a2b5f, #243775);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+span {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Typography */
+h1,
+h2 {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  font-size: xx-large;
+}
+
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+p,
+a,
+.btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+/* Background colors */
+.navbar,
+footer,
+.bg-custom-dark {
+  background: linear-gradient(to right, #111e45, #243775) !important;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.bg-custom-primary {
+  background: linear-gradient(to right, #1a2b5f, #3a4d8c);
+}
+
+.bg-custom-medium,
+.card {
+  background: linear-gradient(to right, #243775, #263979);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-dark {
+  background: #3a4d8c;
+  border: none;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-dark:hover {
+  background: #4a6bdb;
+}
+
+.btn-outline-primary {
+  color: white;
+  border: 2px solid #3a4d8c;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: #3a4d8c;
+  color: white;
+}
+
+/* Links */
+.nav-link,
+a.text-light {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+a.text-light:hover {
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+/* Navigation */
+.navbar-nav .nav-item {
+  position: relative;
+}
+
+.navbar-nav .nav-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 0.3rem;
+  background-color: white;
+  box-shadow: 0 0 3rem rgb(0, 0, 0), 0 0 2rem rgb(0, 0, 0), 0 0 1rem rgb(0, 0, 0), 0 0 2rem rgba(0, 0, 0, 0.856);
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Active link animation */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 1.5rem rgba(85, 147, 255, 0.8), 0 0 3rem rgba(85, 147, 255, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 1.5rem rgba(85, 147, 255, 0.8), 0 0 3rem rgba(85, 147, 255, 0.6), 0 0 3rem
+      rgba(136, 180, 255, 0.705), 0 0 2rem rgb(139, 181, 255);
+  }
+  100% {
+    text-shadow: 0 0 3rem rgba(136, 180, 255, 0.705), 0 0 2rem rgb(139, 181, 255), 0 0 3rem rgba(136, 180, 255, 0.705),
+      0 0 2rem rgb(139, 181, 255);
+  }
+}
+
+.active {
+  animation: glow 1s infinite alternate ease-in-out;
+}
+
+/* Content sections */
+.destacar {
+  background: linear-gradient(to right, #1e2e61, #1b2443);
+  border-radius: 1rem;
+  padding: 5rem;
+}
+
+.menu-section {
+  background: linear-gradient(135deg, #1a2b5f 0%, #243775 100%);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.9375rem;
+  transition: transform 0.3s ease;
+}
+
+.menu-section:hover {
+  transform: translateY(-0.3125rem);
+}
+
+.menu-button {
+  background: linear-gradient(135deg, #243775 0%, #3a4d8c 100%);
+  color: white;
+  border: none;
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 0.625rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-family: "Syncopate", sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.menu-button:hover {
+  background: linear-gradient(135deg, #3a4d8c 0%, #4a6bdb 100%);
+  transform: scale(1.02);
+}
+
+/* Character cards */
+.character-card {
+  background: linear-gradient(135deg, #243775 0%, #3a4d8c 100%);
+  border: none;
+  border-radius: 0.9375rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.character-card:hover {
+  transform: scale(1.05);
+}
+
+.character-img {
+  width: 100%;
+  height: 12.5rem;
+  object-fit: cover;
+}
+
+/* Preview sections */
+.preview-section {
+  display: none;
+  margin-top: 2rem;
+}
+
+.preview-section.active {
+  display: block;
+}
+

@@ -10,89 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        .video-thumbnail {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            height: 200px;
-        }
-        
-        .video-thumbnail:hover {
-            transform: scale(1.05);
-        }
-        
-        .video-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .video-thumbnail .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 3rem;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-        
-        .video-thumbnail:hover .play-icon {
-            opacity: 1;
-        }
-        
-        .video-title {
-            font-family: 'Syncopate', sans-serif;
-            font-weight: 700;
-            text-align: center;
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .video-modal .modal-content {
-            background: linear-gradient(to right, #1a2b5f, #243775);
-            color: white;
-        }
-        
-        .video-modal .modal-header {
-            border-bottom: 1px solid #3a4d8c;
-        }
-        
-        .video-modal .modal-footer {
-            border-top: 1px solid #3a4d8c;
-        }
-        
-        .video-modal .btn-close {
-            filter: invert(1) brightness(200%);
-        }
-        
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-        }
-        
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .video-info {
-            margin-top: 1rem;
-        }
-        
-        .featured-video {
-            margin-bottom: 2rem;
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -149,26 +66,33 @@
         </div>
 
         <!-- Menú Secundario -->
-        <div class="row ">
-            <div class="col-md-4"><a href="personajes.html">
-                <button class="menu-button">
-                    <i class="fas fa-users mb-3 d-block" style="font-size: 2rem;"></i>
-                    Personajes
-                </button></a>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="personajes.html">
+                    <button class="menu-button">
+                        <i class="fas fa-users mb-3 d-block fs-2"></i>
+                        Personajes
+                    </button>
+                </a>
             </div>
-            <div class="col-md-4"><a href="escenarios.html">
-                <button class="menu-button active">
-                    <i class="fas fa-map mb-3 d-block" style="font-size: 2rem;"></i>
-                    Escenarios
-                </button></a>
+            <div class="col-md-4">
+                <a href="escenarios.html">
+                    <button class="menu-button active">
+                        <i class="fas fa-map mb-3 d-block fs-2"></i>
+                        Escenarios
+                    </button>
+                </a>
             </div>
-            <div class="col-md-4"><a href="items.html">
-                <button class="menu-button">
-                    <i class="fas fa-cube mb-3 d-block" style="font-size: 2rem;"></i>
-                    Items
-                </button></a>
+            <div class="col-md-4">
+                <a href="items.html">
+                    <button class="menu-button">
+                        <i class="fas fa-cube mb-3 d-block fs-2"></i>
+                        Items
+                    </button>
+                </a>
             </div>
         </div>
+        
 
         
 
@@ -538,85 +462,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Script para generar miniaturas de los videos
-        document.addEventListener('DOMContentLoaded', function() {
-            // Función para generar miniaturas de video
-            function generateThumbnail(videoSrc, thumbnailId) {
-                const video = document.createElement('video');
-                video.src = videoSrc;
-                video.muted = true;
-                video.preload = 'metadata';
-                
-                video.addEventListener('loadeddata', function() {
-                    // Configurar el tiempo del video para capturar un frame interesante
-                    video.currentTime = 1.5;
-                    
-                    video.addEventListener('seeked', function() {
-                        // Crear un canvas para capturar el frame
-                        const canvas = document.createElement('canvas');
-                        canvas.width = video.videoWidth;
-                        canvas.height = video.videoHeight;
-                        
-                        // Dibujar el frame en el canvas
-                        const ctx = canvas.getContext('2d');
-                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                        
-                        // Convertir el canvas a una URL de datos
-                        const dataUrl = canvas.toDataURL('image/jpeg');
-                        
-                        // Establecer la URL de datos como la fuente de la imagen de miniatura
-                        const thumbnail = document.getElementById(thumbnailId);
-                        if (thumbnail) {
-                            thumbnail.src = dataUrl;
-                        }
-                    });
-                });
-            }
-            
-            // Generar miniaturas para cada video
-            generateThumbnail('src/escenarios/307609963110117379.mp4', 'thumbnail1');
-            generateThumbnail('src/escenarios/307834946239335608.mp4', 'thumbnail2');
-            generateThumbnail('src/escenarios/308018895892828162.mp4', 'thumbnail3');
-            generateThumbnail('src/escenarios/308194615864445187.mp4', 'thumbnail4');
-            generateThumbnail('src/escenarios/clipify-ai-20241117112041.mp4', 'thumbnail5');
-            generateThumbnail('src/escenarios/cm3lotobr03235ytt6cd7bnr.mp4', 'thumbnail6');
-            generateThumbnail('src/escenarios/fondo menu de inicio0001-0250.mp4', 'thumbnail7');
-            generateThumbnail('src/escenarios/VidnozImageToVideo (3).mp4', 'thumbnail8');
-            
-            // Pausar el video destacado cuando se abre un modal
-            const videoModals = document.querySelectorAll('.video-modal');
-            const featuredVideo = document.getElementById('featured-video');
-            
-            videoModals.forEach(modal => {
-                modal.addEventListener('show.bs.modal', function() {
-                    if (featuredVideo) {
-                        featuredVideo.pause();
-                    }
-                });
-            });
-            
-            // Pausar los videos de los modales cuando se cierran
-            videoModals.forEach(modal => {
-                modal.addEventListener('hidden.bs.modal', function() {
-                    const video = this.querySelector('video');
-                    if (video) {
-                        video.pause();
-                    }
-                });
-            });
-            
-            // Reproducir automáticamente los videos al abrir el modal
-            videoModals.forEach(modal => {
-                modal.addEventListener('shown.bs.modal', function() {
-                    const video = this.querySelector('video');
-                    if (video) {
-                        video.play();
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="../js/escenarios.js"></script>
 </body>
 </html>
 
