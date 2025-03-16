@@ -1,20 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
-    const statusDiv = document.getElementById('formStatus');
     const submitButton = document.getElementById('submitButton');
     
-    // Función para mostrar mensajes de estado
-    function showStatus(message, type) {
-        statusDiv.textContent = message;
-        statusDiv.className = `alert alert-${type} d-block`;
-        
-        // Si es un mensaje de éxito, ocultarlo después de 5 segundos
-        if (type === 'success') {
-            setTimeout(() => {
-                statusDiv.className = 'alert d-none';
-            }, 5000);
-        }
-    }
+    // Referencias a los modales
+    const loadingModalElement = document.getElementById('loadingModal');
+    const successModalElement = document.getElementById('successModal');
+    const errorModalElement = document.getElementById('errorModal');
+    const validationModalElement = document.getElementById('validationModal');
+
+    const loadingModal = new bootstrap.Modal(loadingModalElement);
+    const successModal = new bootstrap.Modal(successModalElement);
+    const errorModal = new bootstrap.Modal(errorModalElement);
+    const validationModal = new bootstrap.Modal(validationModalElement);
     
     // Función para validar el formulario
     function validateForm() {
@@ -69,12 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         
-        // Ocultar cualquier mensaje anterior
-        statusDiv.className = 'alert d-none';
-        
         // Validar el formulario
         if (!validateForm()) {
-            showStatus('Por favor, completa correctamente todos los campos del formulario.', 'danger');
+            validationModal.show();
             return;
         }
         
@@ -83,14 +77,14 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando...';
         submitButton.disabled = true;
         
-        // Mostrar mensaje de envío
-        showStatus('Enviando tu mensaje...', 'info');
+        // Mostrar modal de carga
+        loadingModal.show();
         
         // Preparar los datos del formulario
         const formData = new FormData(form);
         
-        // Enviar el formulario usando fetch
-        fetch(form.action, {
+        // Enviar el formulario usando fetch a FormSubmit
+        fetch('https://formsubmit.co/elianhablamediante@gmail.com', {
             method: 'POST',
             body: formData,
             headers: {
@@ -98,9 +92,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .then(response => {
+            // Ocultar modal de carga
+            loadingModal.hide();
+            
             if (response.ok) {
-                // Éxito
-                showStatus('¡Mensaje enviado con éxito! Te responderemos lo antes posible.', 'success');
+                // Mostrar modal de éxito
+                successModal.show();
+                
+                // Resetear el formulario
                 form.reset();
                 
                 // Limpiar las clases de validación
@@ -113,8 +112,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => {
-            // Error en la petición
-            showStatus('No se pudo enviar el mensaje: ' + error.message, 'danger');
+            // Ocultar modal de carga
+            loadingModal.hide();
+            
+            // Mostrar mensaje de error en el modal
+            document.getElementById('errorMessage').textContent = error.message;
+            errorModal.show();
         })
         .finally(() => {
             // Restaurar el botón
